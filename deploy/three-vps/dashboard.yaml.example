@@ -1,0 +1,22 @@
+debug: false
+listen_host: 0.0.0.0
+listen_port: 8008
+language: zh_CN
+location: Asia/Shanghai
+site_name: 我的 VPS
+force_auth: true
+install_host: REPLACE_WITH_DASHBOARD_IP:8443
+tls: true
+enable_mcp: false
+online_stats_days: 30
+https:
+  listen_port: 8443
+  tls_cert_path: /etc/nezha/dashboard.crt
+  tls_key_path: /etc/nezha/dashboard.key
+tsdb:
+  data_path: data/tsdb
+  retention_days: 30
+  min_free_disk_space_gb: 1
+  max_memory_mb: 32
+memory:
+  go_mem_limit_mb: 160

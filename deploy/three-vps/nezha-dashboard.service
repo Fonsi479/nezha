@@ -1,0 +1,26 @@
+[Unit]
+Description=Nezha Dashboard
+After=network-online.target ufw.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=nezha
+Group=nezha
+WorkingDirectory=/opt/nezha/dashboard
+ExecStart=/opt/nezha/dashboard/app -c /etc/nezha/dashboard.yaml
+EnvironmentFile=/etc/nezha/dashboard.env
+Environment=GOMAXPROCS=1
+Restart=on-failure
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/etc/nezha /opt/nezha/dashboard/data
+MemoryHigh=256M
+MemoryMax=384M
+
+[Install]
+WantedBy=multi-user.target

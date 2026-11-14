@@ -1,0 +1,19 @@
+server: REPLACE_WITH_DASHBOARD_IP:8443
+client_secret: REPLACE_WITH_AGENT_SECRET
+uuid: REPLACE_WITH_UNIQUE_UUID
+tls: true
+insecure_tls: false
+nic_allowlist:
+  REPLACE_WITH_PUBLIC_NIC: true
+hard_drive_partition_allowlist:
+  - /
+report_delay: 3
+disable_auto_update: true
+disable_force_update: true
+disable_command_execute: true
+disable_nat: true
+disable_send_query: true
+skip_connection_count: false
+skip_procs_count: false
+gpu: false
+temperature: false
